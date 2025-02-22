@@ -1,0 +1,1 @@
+# Vistas o "pantallas" completas (por ejemplo, Home.jsx, About.jsx, Contact.jsx).
