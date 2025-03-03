@@ -57,6 +57,7 @@ function App() {
           <p className="text-gray-500 mt-2">
             Información extraída de la API - BlackClassic
           </p>
+          <h3>aqui edito giron</h3>
         </div>
 
         {/* usuarios */}
