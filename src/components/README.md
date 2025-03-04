@@ -1,0 +1,1 @@
+# Lógica relacionada con la comunicación con APIs.
