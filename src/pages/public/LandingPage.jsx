@@ -1,11 +1,10 @@
-import React from 'react';
 import Navbar from '../../components/Navbar';
 
 const LandingPage = () => {
   return (
     <>
       <Navbar />
-      <section className="hero text-center py-3 mt-8 mb-8">
+      <section className="hero text-center py-3 mt-4 mb-8">
         <div className="container mx-auto px-4">
           <header className="hero-header mb-8">
             <div className="hero-image-container">
@@ -33,7 +32,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <footer className="hero-footer mt-14 mb-12">
+          <div className="hero-footer mt-14 mb-12">
             <div className="footer-image-container">
               <img 
                 src="/src/assets/images/gato-vino.png" 
@@ -41,7 +40,7 @@ const LandingPage = () => {
                 className="w-40 mx-auto" 
               />
             </div>
-          </footer>
+          </div>
         </div>
       </section>
     </>
