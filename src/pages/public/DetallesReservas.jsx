@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getReservaById, generateQR } from '../../utils/ApiMesas';
+import { getReservaById } from '../../utils/ApiMesas';
+import QRModern from '../../components/QRModern';
 
 const DetallesReservas = () => {
   const { id } = useParams();
   const [reserva, setReserva] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [qrCode, setQrCode] = useState(null);
+  const [qrInstance, setQrInstance] = useState(null);
 
   useEffect(() => {
     const fetchReserva = async () => {
@@ -20,21 +21,15 @@ const DetallesReservas = () => {
     fetchReserva();
   }, [id]);
 
-  const handleShowQR = async () => {
-    try {
-      const dataQR = await generateQR(id);
-      setQrCode(dataQR.qr);
-      setShowModal(true);
-    } catch (error) {
-      console.error("Error al generar el código QR", error);
-    }
+  // Ahora se usa el código de la reserva para generar el QR de forma local
+  const handleShowQR = () => {
+    setShowModal(true);
   };
 
   const handleDownloadQR = () => {
-    const link = document.createElement('a');
-    link.href = qrCode;
-    link.download = 'codigo_qr.png';
-    link.click();
+    if (qrInstance) {
+      qrInstance.download({ extension: "png", name: "codigo_qr" });
+    }
   };
 
   if (!reserva) {
@@ -59,14 +54,8 @@ const DetallesReservas = () => {
         <div>
           <div>
             <h2>¡Reserva confirmada!</h2>
-            {qrCode ? (
-              <img 
-                src={qrCode} 
-                alt="Código QR" 
-              />
-            ) : (
-              <p>Cargando QR...</p>
-            )}
+            {/* El componente QRModern genera el QR y guarda la instancia en qrInstance */}
+            <QRModern data={reserva.codigoqr} qrRefCallback={setQrInstance} />
             <div>
               <p>Fecha: {reserva.fecha}</p>
               <p>Hora: {reserva.horainicio}</p>
