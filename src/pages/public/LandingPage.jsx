@@ -1,4 +1,5 @@
 import Navbar from '../../components/Navbar';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
@@ -26,9 +27,9 @@ const LandingPage = () => {
 
           <div className="hero-action mb-6">
             <div className="button-container">
-              <button className="px-6 py-2 bg-black text-white rounded-md">
-                Reservar Ahora
-              </button>
+              <Link to="/acceso"  className="px-6 py-2 bg-black text-white rounded-md">
+                Reservar mesa
+              </Link>
             </div>
           </div>
 

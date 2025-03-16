@@ -5,6 +5,8 @@ import Login from "../pages/admin/Login";
 import Novedades from "../pages/public/Novedades";
 import Encuentranos from "../pages/public/Encuentranos";
 import Galeria from "../pages/public/Galeria";
+import Mesas from "../pages/public/Mesas";
+import DetallesReservas from "../pages/public/DetallesReservas";
 
 const router = createBrowserRouter([
     {
@@ -20,16 +22,24 @@ const router = createBrowserRouter([
         element: <Login />,
     },
     {
-        path: "/Novedades",
+        path: "/novedades",
         element: <Novedades />,
     },
     {
-        path: "/Encuentranos",
+        path: "/encuentranos",
         element: <Encuentranos />,
     },
     {
-        path: "/Galeria",
+        path: "/galeria",
         element: <Galeria />,
+    },
+    {
+        path: "/mesas",
+        element: <Mesas />,
+    },
+    {
+        path: "/detalles-reserva/:id",
+        element: <DetallesReservas />,
     },
 ]);
 
