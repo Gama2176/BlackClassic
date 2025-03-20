@@ -12,7 +12,7 @@ export default function Footer() {
             className="w-28 h-auto mb-6 object-contain"
           />
           <p className="text-sm text-gray-300 mb-6">
-            Conectando culturas a través del aprendizaje de idiomas.
+          Black Classic no es un destino, es una promesa: la elegancia, como un buen whisky, nunca envejece, solo se perfecciona.
           </p>
           <div className="flex mt-4 space-x-4">
             <a
@@ -60,23 +60,18 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#about-us" className="hover:text-white transition-colors">
-                Misión y Visión
+              <a href="#Novedades" className="hover:text-white transition-colors">
+                Novedades
               </a>
             </li>
             <li>
-              <a href="#idiomas" className="hover:text-white transition-colors">
-                Idiomas
+              <a href="#Encuentranos" className="hover:text-white transition-colors">
+                Encuentranos
               </a>
             </li>
             <li>
-              <a href="#testimonios" className="hover:text-white transition-colors">
-                Testimonios
-              </a>
-            </li>
-            <li>
-              <a href="#dependencias" className="hover:text-white transition-colors">
-                Dependencias
+              <a href="#Galeria" className="hover:text-white transition-colors">
+                Galería
               </a>
             </li>
           </ul>
@@ -130,7 +125,7 @@ export default function Footer() {
       {/* Footer Inferior */}
       <div className="mt-16 flex flex-col items-center">
         <p className="text-sm text-gray-400">
-          Euro Centro de Idiomas de México S.C. © todos los derechos reservados
+          BlackClassic. © todos los derechos reservados
         </p>
       </div>
     </footer>
