@@ -19,7 +19,12 @@ const SeleccionarAcceso = () => {
     const fetchAccesos = async () => {
       try {
         const datos = await getAccesos();
-        setAccesos(datos);
+        const ordenAccesos = ["General", "Balcon", "VIP"];
+        
+        // Ordenar los accesos según el orden deseado
+        const accesosOrdenados = datos.sort((a, b) => ordenAccesos.indexOf(a.nombre) - ordenAccesos.indexOf(b.nombre));
+
+        setAccesos(accesosOrdenados);
       } catch (error) {
         console.error("Error al obtener los accesos", error);
       }
@@ -40,8 +45,8 @@ const SeleccionarAcceso = () => {
             <div className="absolute -top-7 left-1/2 transform -translate-x-1/2">
               {icons[acceso.nombre] || <Users className="w-10 h-10 text-gray-500" />}
             </div>
-            <h2 className="text-xl font-semibold mt-10">Acceso {acceso.nombre}</h2>
-            <p className="text-lg font-bold text-gray-800">${acceso.precio} MXN</p>
+            <h2 className="text-xl font-semibold mt-5">Acceso {acceso.nombre}</h2>
+            <p className="text-lg py-2 font-bold text-gray-800">${acceso.precio} MXN</p>
             <p className="text-gray-500 text-sm">{acceso.descripcion}</p>
             <button 
               onClick={() => navigate("/mesas", { state: { tipoAcceso: acceso.nombre } })}
