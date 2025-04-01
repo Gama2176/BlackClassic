@@ -47,6 +47,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
+          <h1>nuevo cambio sin importancia</h1>
         </section>
       <Footer/>
     </>
