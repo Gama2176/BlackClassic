@@ -7,6 +7,7 @@ import Encuentranos from "../pages/public/Encuentranos";
 import Galeria from "../pages/public/Galeria";
 import Mesas from "../pages/public/Mesas";
 import DetallesReservas from "../pages/public/DetallesReservas";
+import Recepcion from "../pages/admin/Recepcion";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
         path: "/detalles-reserva/:id",
         element: <DetallesReservas />,
     },
+    {
+        path: "/recepcion",
+        element: <Recepcion />,
+    }
+
 ]);
 
 export default router;

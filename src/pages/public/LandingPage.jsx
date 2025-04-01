@@ -1,6 +1,9 @@
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
+import Logo from '../../../public/images/Black_Classic.png';
+import GatoVinoImg from '../../../public/images/gato-vino.png';
+
 
 const LandingPage = () => {
   return (
@@ -11,7 +14,7 @@ const LandingPage = () => {
             <header className="hero-header mb-8">
               <div className="hero-image-container">
                 <img 
-                  src="/src/assets/images/Black Classic.png" 
+                  src={Logo} 
                   alt="Black Classic" 
                   className="mx-auto w-96" 
                 />
@@ -37,7 +40,7 @@ const LandingPage = () => {
             <div className="hero-footer mt-14 mb-12">
               <div className="footer-image-container">
                 <img 
-                  src="/src/assets/images/gato-vino.png" 
+                  src={GatoVinoImg}
                   alt="Gato Vino" 
                   className="w-40 mx-auto" 
                 />

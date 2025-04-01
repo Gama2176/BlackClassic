@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import IconFooterImg from '../../public/images/logo_footer.png'
 
 export default function Footer() {
   return (
@@ -7,9 +8,9 @@ export default function Footer() {
         {/* Columna 1 - Branding */}
         <div className="flex flex-col text-left items-start">
           <img
-            src="../assets/images/icon-footer.svg"
+            src={IconFooterImg}
             alt="BlackClassic-Logo"
-            className="w-28 h-auto mb-6 object-contain"
+            className="w-48 h-auto mb-6 object-contain"
           />
           <p className="text-sm text-gray-300 mb-6">
           Black Classic no es un destino, es una promesa: la elegancia, como un buen whisky, nunca envejece, solo se perfecciona.

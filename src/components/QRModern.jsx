@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import QRCodeStyling from "qr-code-styling";
-import Logo from "../../public/images/gato-vino.png"
+import Logo from "../../public/images/gato-vino.png";
 
 const QRModern = ({ data, qrRefCallback }) => {
   const qrRef = useRef(null);
@@ -9,34 +9,37 @@ const QRModern = ({ data, qrRefCallback }) => {
     if (qrRef.current) {
       // Limpiar el contenedor para evitar duplicados
       qrRef.current.innerHTML = "";
-      
+
       const qrCode = new QRCodeStyling({
+        type: "canvas",
+        shape: "square",
         width: 300,
         height: 300,
-        data: data,
-        image: Logo, // Ruta directa desde public
-        dotsOptions: {
-          color: "#000000",
-          type: "dots",
-          roundSize: true
+        data: data, // utiliza la data pasada al componente
+        margin: 0,
+        qrOptions: { typeNumber: "0", mode: "Byte", errorCorrectionLevel: "Q" },
+        imageOptions: { saveAsBlob: true, hideBackgroundDots: true, imageSize: 0.4, margin: 0 },
+        dotsOptions: { type: "square", color: "#000000", roundSize: true },
+        backgroundOptions: { round: 0, color: "#ffffff" },
+        dotsOptionsHelper: { 
+          colorType: { single: true, gradient: false },
+          gradient: { linear: true, radial: false, color1: "#6a1a4c", color2: "#6a1a4c", rotation: "0" }
         },
-        backgroundOptions: {
-          color: "#ffffff"
+        cornersSquareOptions: { type: "extra-rounded", color: "#000000" },
+        cornersSquareOptionsHelper: { 
+          colorType: { single: true, gradient: false },
+          gradient: { linear: true, radial: false, color1: "#000000", color2: "#000000", rotation: "0" }
         },
-        imageOptions: {
-          crossOrigin: "anonymous",
-          hideBackgroundDots: true,
-          imageSize: 0.4,
-          margin: 0
+        cornersDotOptions: { type: "", color: "#000000" },
+        cornersDotOptionsHelper: { 
+          colorType: { single: true, gradient: false },
+          gradient: { linear: true, radial: false, color1: "#000000", color2: "#000000", rotation: "0" }
         },
-        cornersSquareOptions: {
-          type: "extra-rounded",
-          color: "#000000"
+        backgroundOptionsHelper: {
+          colorType: { single: true, gradient: false },
+          gradient: { linear: true, radial: false, color1: "#ffffff", color2: "#ffffff", rotation: "0" }
         },
-        cornersDotOptions: {
-          type: "square",
-          color: "#000000"
-        }
+        image: Logo
       });
 
       qrCode.append(qrRef.current);
