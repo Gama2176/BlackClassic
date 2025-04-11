@@ -13,8 +13,8 @@ const QRModern = ({ data, qrRefCallback }) => {
       const qrCode = new QRCodeStyling({
         type: "canvas",
         shape: "square",
-        width: 300,
-        height: 300,
+        width: 200,
+        height: 200,
         data: data, // utiliza la data pasada al componente
         margin: 0,
         qrOptions: { typeNumber: "0", mode: "Byte", errorCorrectionLevel: "Q" },
